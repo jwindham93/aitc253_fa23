@@ -1,0 +1,13 @@
+body{
+    background-color: darkorange;
+}
+h1{
+    font-size: 15px;
+    color:blue;
+    text-align: left;
+}
+p{
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
