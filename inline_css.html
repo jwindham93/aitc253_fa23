@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inline CSS Styling</title>
+    
+    <!--Change the href to style_01.css to apply the CSS.-->
+    <link rel="stylesheet" href="style_01.css">
+</head>
+
+<body>
+    <h1>Contact Us</h1>
+    <!--Changed font Size in the p element-->
+    <p style="font-size: 30px">Please fill out the form below to get in touch with us.</p>
+
+    <form id="contactForm" onsubmit="submitForm(event)">
+        <fieldset>
+            <legend>Contact Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+        </fieldset>
+
+        <fieldset>
+            <legend>Message</legend>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Information</legend>
+            <label for="newsletter">Subscribe to Newsletter:</label>
+            <input type="checkbox" id="newsletter" name="newsletter">
+
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevents the default form submission
+
+            // Retrieve form data
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+            const newsletter = document.getElementById("newsletter").checked;
+            const priority = document.getElementById("priority").value;
+
+            // You can now work with the form data here, e.g., display it or process it further
+            // For this example, let's just display an alert with the form data
+            alert(`Form Data:
+                Name: ${name}
+                Email: ${email}
+                Phone: ${phone}
+                Subject: ${subject}
+                Message: ${message}
+                Subscribe to Newsletter: ${newsletter ? "Yes" : "No"}
+                Priority: ${priority}`);
+        }
+    </script>
+</body>
+
+</html>
